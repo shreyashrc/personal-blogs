@@ -4,16 +4,12 @@ services:
     env: node
     branch: main
     plan: starter
-    nodeVersion: 20
     buildCommand: npm run build
     startCommand: npm start
     autoDeploy: true
     healthCheckPath: /
-    disk:
-      name: blog-images
-      mountPath: /opt/render/project/src/public/blog-images
-      sizeGB: 1
     envVars:
       - key: NEXT_PUBLIC_SITE_URL
         value: https://shreyash.writes.onrender.com
-
+      - key: NODE_VERSION
+        value: "20"
