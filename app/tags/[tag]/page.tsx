@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { filterPostsByTag, getAllTags } from "@/lib/mdx";
+import { getSiteName } from "@/lib/site";
 import { PostCard } from "@/components/PostCard";
 
 export async function generateStaticParams() {
@@ -9,7 +10,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { tag: string } }): Promise<Metadata> {
   const tag = decodeURIComponent(params.tag);
   return {
-    title: `#${tag} | shreyash.writes`,
+    title: `#${tag} | ${getSiteName()}`,
     description: `Posts tagged with ${tag}`,
     alternates: { canonical: `/tags/${encodeURIComponent(tag)}` },
   };

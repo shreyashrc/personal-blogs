@@ -3,9 +3,10 @@ import { getAllPostsMeta } from "@/lib/mdx";
 import dynamic from "next/dynamic";
 import { cookies } from "next/headers";
 
+import { getSiteName } from "@/lib/site";
 export const metadata: Metadata = {
-  title: "Blog | shreyash.writes",
-  description: "All posts from shreyash.writes",
+  title: `Blog | ${getSiteName()}`,
+  description: `All posts from ${getSiteName()}`,
   alternates: { canonical: "/blog" },
 };
 
