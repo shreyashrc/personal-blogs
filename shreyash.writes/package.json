@@ -1,0 +1,67 @@
+{
+  "name": "shreyash.writes",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "post:new": "node scripts/new-post.mjs",
+    "content:check": "node scripts/validate-content.mjs",
+    "posts:list": "node scripts/posts-meta.mjs list",
+    "posts:publish": "node scripts/posts-meta.mjs publish",
+    "posts:rename": "node scripts/posts-meta.mjs rename",
+    "content:backup": "node scripts/backup-content.mjs",
+    "prepare": "husky"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "date-fns": "^4.1.0",
+    "gray-matter": "^4.0.3",
+    "next": "14.2.5",
+    "next-mdx-remote": "^5.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "reading-time": "^1.5.0",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-pretty-code": "^0.14.1",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1",
+    "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.5",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "husky": "^9.1.6",
+    "vitest": "^1.6.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "post:new": "node scripts/new-post.mjs",
+    "content:check": "node scripts/validate-content.mjs",
+    "posts:list": "node scripts/posts-meta.mjs list",
+    "posts:publish": "node scripts/posts-meta.mjs publish",
+    "posts:rename": "node scripts/posts-meta.mjs rename",
+    "content:backup": "node scripts/backup-content.mjs",
+    "test": "vitest run",
+    "prepare": "husky"
+  }
+}

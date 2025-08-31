@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run quick checks before pushing (fast fail). Use --no-verify to skip if needed.
+echo "Running content check, typecheck and lint..."
+npm run content:check --silent || exit 1
+npm run typecheck --silent || exit 1
+npm run lint --silent || exit 1
+
