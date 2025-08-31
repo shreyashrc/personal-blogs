@@ -1,5 +1,5 @@
 import { getAllPostsMeta } from "@/lib/mdx";
-import { getSiteUrl } from "@/lib/site";
+import { getSiteUrl, getSiteName } from "@/lib/site";
 
 export const revalidate = 3600;
 
@@ -28,12 +28,13 @@ export async function GET() {
     `)
     .join("\n");
 
-  const xml = `<?xml version="1.0" encoding="UTF-8" ?>
-  <rss version="2.0">
+  const siteName = getSiteName();
+  const xml = `<?xml version=\"1.0\" encoding=\"UTF-8\" ?>
+  <rss version=\"2.0\">
     <channel>
-      <title>shreyash.writes</title>
+      <title>${siteName}</title>
       <link>${site}</link>
-      <description>Posts from shreyash.writes</description>
+      <description>Posts from ${siteName}</description>
       ${items}
     </channel>
   </rss>`;

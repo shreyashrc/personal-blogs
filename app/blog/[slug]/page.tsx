@@ -4,7 +4,7 @@ import { getAllSlugs, getPostBySlug } from "@/lib/mdx";
 import { MDXContent } from "@/components/MDXContent";
 import { PostHeader } from "@/components/PostHeader";
 import { JsonLd } from "@/components/JsonLd";
-import { getSiteUrl } from "@/lib/site";
+import { getSiteUrl, getSiteName } from "@/lib/site";
 import { RelatedPosts } from "@/components/RelatedPosts";
 import { ShareButtons } from "@/components/ShareButtons";
 
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   try {
     const { meta } = getPostBySlug(params.slug);
     return {
-      title: `${meta.title} | shreyash.writes`,
+      title: `${meta.title} | ${getSiteName()}`,
       description: meta.excerpt,
       alternates: { canonical: `/blog/${meta.slug}` },
       openGraph: {
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       },
     };
   } catch {
-    return { title: "Post not found | shreyash.writes" };
+    return { title: `Post not found | ${getSiteName()}` };
   }
 }
 
@@ -59,7 +59,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     image: post.meta.featuredImage ? new URL(post.meta.featuredImage, siteUrl).toString() : undefined,
     mainEntityOfPage: url,
     url,
-    publisher: { "@type": "Organization", name: "shreyash.writes" },
+    publisher: { "@type": "Organization", name: getSiteName() },
     wordCount: post.content.split(/\s+/).length,
   };
 

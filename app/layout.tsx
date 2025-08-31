@@ -16,14 +16,17 @@ const mono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+import { getSiteName, getSiteDescription } from "@/lib/site";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const siteName = getSiteName();
+const siteDesc = getSiteDescription();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "shreyash.writes",
-  description: "Minimal personal blog by Shreyash Choppawar",
+  title: siteName,
+  description: siteDesc,
   openGraph: {
-    siteName: "shreyash.writes",
+    siteName: siteName,
     url: siteUrl,
     type: "website",
   },

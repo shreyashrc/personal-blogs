@@ -1,6 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 # Optimize any staged images under public/blog-images before commit
 changed_files=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^public/blog-images/.+\.(png|jpg|jpeg|webp)$' || true)
 

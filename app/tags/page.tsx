@@ -2,9 +2,10 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getAllTags } from "@/lib/mdx";
 
+import { getSiteName } from "@/lib/site";
 export const metadata: Metadata = {
-  title: "Tags | shreyash.writes",
-  description: "Browse posts by tag on shreyash.writes",
+  title: `Tags | ${getSiteName()}`,
+  description: `Browse posts by tag on ${getSiteName()}`,
   alternates: { canonical: "/tags" },
 };
 

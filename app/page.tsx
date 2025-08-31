@@ -1,18 +1,21 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
+import { getSiteName, getSiteDescription } from "@/lib/site";
+
 export const metadata: Metadata = {
-  title: "shreyash.writes",
-  description: "Minimal personal blog by Shreyash Choppawar — notes on engineering, product, and learning in public.",
+  title: getSiteName(),
+  description: getSiteDescription(),
   alternates: { canonical: "/" },
 };
 
 export default function Home() {
+  const siteName = getSiteName();
   return (
     <section className="py-16 sm:py-24 animate-fade-in">
       <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Hi, I’m Shreyash.</h1>
       <p className="mt-4 text-foreground/80 max-w-prose">
-        Welcome to <span className="font-semibold">shreyash.writes</span> — a minimal blog where I share notes on engineering,
+        Welcome to <span className="font-semibold">{siteName}</span> — a minimal blog where I share notes on engineering,
         product, and learning in public.
       </p>
       <div className="mt-8">
